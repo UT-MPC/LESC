@@ -26,7 +26,7 @@ The first thing we need to do is to create a *variable* we will use to store the
 
 ## Step 7
 
-Next, we want to set the value of the *light* variable any time the user presses the A button. First we need activate an action when the button is pressed. Choose ``||Input:on Button Pressed||`` from the ``||Input||`` tray. 
+Next, we want to set the value of the *light* variable any time the user presses the A button. First we need activate an action when the button is pressed. Choose ``||Input:on Button Pressed||`` from the ``||Input:Input||`` tray. 
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
