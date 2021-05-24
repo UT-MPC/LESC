@@ -1,4 +1,4 @@
-# LESC Light Meter Tutorial -- Activity 1.1
+# LESC Light Meter Tutorial
 
 ## Step 1
 
