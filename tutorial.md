@@ -26,7 +26,7 @@ Next, we want to set the value of the *reading* variable to be the value that th
 
 ```blocks
 basic.forever(function () {
-    reading = input.lightLevel()
+    reading = 0
 })
 ```
 
@@ -35,7 +35,9 @@ basic.forever(function () {
 Now, instead of the value of the light being 0, we want to get the value from the light sensor. You can find this sensor value in the ``||Input||`` tray; it's called ``||Input:lightLevel||``. Drag ``||Input:lightlevel||`` to replace the 0.
 
 ```blocks
-reading = input.lightLevel()
+basic.forever(function () {
+    reading = input.lightLevel()
+})
 ```
 
 ## Step 8
