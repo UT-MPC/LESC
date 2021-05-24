@@ -9,7 +9,7 @@
     },
     "files": [
         "main.ts",
-        "tutorial.md",
+        "lightmeter1.md",
         "README.md"
     ],
     "targetVersions": {
