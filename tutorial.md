@@ -22,7 +22,7 @@ The first thing we need to do is to create a *variable* we will use to store the
 
 ## Step 6
 
-Next, we want to set the value of the *reading* variable to be the value that the @boardname@'s light sensors detect in the surroundings. Choose ``||Variables:set light to||`` and drag the block inside the ``||Basic:forever||`` block.
+Next, we want to set the value of the *reading* variable to be the value that the @boardname@'s light sensors detect in the surroundings. Choose ``||Variables:set reading to||`` and drag the block inside the ``||Basic:forever||`` block.
 
 ```blocks
 basic.forever(function () {
