@@ -42,7 +42,7 @@ basic.forever(function () {
 
 ## Step 8
 
-At this point, your program is successfully retrieving the light value. But you don't know what it is! We need to display it on the @boardname@'s LEDs. To do this, select ``||Led:plotBarGraph||`` from the ``||Led:led||`` tray, drag it after the ``||Variables:set light to||`` block You need to replace the first 0 with your variable's name and the second 0 with the max value of the light reading (i.e., 255).
+At this point, your program is successfully retrieving the light value. But you don't know what it is! We need to display it on the @boardname@'s LEDs. To do this, select ``||Led:plot bar graph||`` from the ``||Led:led||`` tray, drag it after the ``||Variables:set light to||`` block You need to replace the first 0 with your variable's name and the second 0 with the max value of the light reading (i.e., 255).
 
 ```blocks
 basic.forever(function () {
