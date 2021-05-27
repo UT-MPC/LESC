@@ -10,6 +10,7 @@
     "files": [
         "main.ts",
         "lightmeter1.md",
+        "lightmeter2.md",
         "README.md"
     ],
     "targetVersions": {
