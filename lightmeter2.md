@@ -95,3 +95,39 @@ basic.forever(function () {
     }
 })
 ```
+
+## Step 12
+
+All that remains now are the display functions. First, when the user presses button A, we want to display the value of ``||Variables:totalTime||``.
+
+```
+input.onButtonPressed(Button.A, function () {
+    basic.showNumber(totalTime)
+})
+```
+
+## Step 13
+
+The other display function just helps us tell that our program is working correctly. When the value of ``||Variables:timing||`` is ``||Logic::true||`` (i.e., the light is on), let's light up all 25 LEDs. When the value of ``||Variables:timing||`` is ``||Logic::false||`` (i.e., the light is on), let's light up just the center LED. To do this, we can actually create *another* ``||Basic:forever||`` block with an ``||Logic:if else||`` condition within it.
+
+```
+basic.forever(function () {
+    if (timing == true) {
+        basic.showLeds(`
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            `)
+    } else {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . # . .
+            . . . . .
+            . . . . .
+            `)
+    }
+})
+```
