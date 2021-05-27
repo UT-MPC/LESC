@@ -80,6 +80,7 @@ basic.forever(function () {
 
 The next step is to fill in what the program does when the light level is greater than the threshold (i.e., what happens in the else part of the block). In this case, the light is on. If we're not timing, we need to start timing. This means we need to set the ``||Variables:timing||`` variable to ``||Logic:true||`` and set the ``||Variables:startTime||`` to the current value of ``||Input:running time||``.
 
+```
 basic.forever(function () {
     if (input.lightLevel() < threshold) {
         if (timing == true) {
@@ -93,3 +94,4 @@ basic.forever(function () {
         }
     }
 })
+```
