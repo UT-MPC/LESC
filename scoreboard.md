@@ -57,3 +57,7 @@ basic.forever(function () {
     }
 })
 ```
+
+## Step 7
+
+That's it! Download that program to your @boardname@ scoreboard and see how it works!
