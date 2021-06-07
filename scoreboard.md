@@ -20,7 +20,7 @@ basic.showNumber(score)
 
 ## Step 4
 
-When the value of pin P0 is high (1), we want to count a scored goal. We will create a variable ``||Variables:goal||`` that aims to continuously store the value of P0 (i.e., the value of ``||Variables:goal||`` is 1 if pin P0 is high, and 0 otherwise). In the ``||Basic:forever||`` block, set the value of ``||Variables:goal||`` to the value of ``||Pins:digital read pin P0||``.
+When the value of pin P0 is high (1), we want to count a scored goal. We will create a variable ``||Variables:goal||`` that aims to continuously store the value of P0 (i.e., the value of ``||Variables:goal||`` is 1 if pin P0 is high, and 0 otherwise). In the ``||Basic:forever||`` block, set the value of ``||Variables:goal||`` to the value of ``||Pins:digital read pin P0||`` (You'll need to look under "Advanced" for the ``||Pins:Pins||`` tray.
 
 ```blocks
 basic.forever(function () {
