@@ -43,21 +43,17 @@ First, we need to create a counter variable. Initially it should be set to 0. Ea
 
 ```blocks
 let counter = 0
-let x = 0
-let y = 0
 ```
 
 ## Step 3
 
-At the start of each round, we're going to need to select a random targetX and a random targetY. Create both of these variables and set them both initially to -1 (since we haven't selected anything yet). We're also going to want to take a pause between each round, show the checkmark, and then start the new round. We don't want to show our ball while we're between rounds. So we need a variable to keep track of whether we're actively playing or not. So create a new variable ``||Variables:playing||``, and set its initial value to ``||Logic:false||``. 
+At the start of each round, we're going to need to select a random ``||Variables:targetX||`` and a random ``||Variables:targetY||``. Create both of these variables and set them both initially to -1 (since we haven't selected anything yet). We're also going to want to take a pause between each round, show the checkmark, and then start the new round. We don't want to show our ball while we're between rounds. So we need a variable to keep track of whether we're actively playing or not. So create a new variable ``||Variables:playing||``, and set its initial value to ``||Logic:false||``. 
 
 ```blocks
 let targetX = -1
 let targetY = -1
 let playing = false
 let counter = 0
-let x = 0
-let y = 0
 ```
 
 ## Step 4
@@ -99,7 +95,7 @@ basic.forever(function () {
 
 ## Step 5
 
-All that's left now is to handle the individual rounds. To do this, we'll use a second ``||Basic:forever||`` block. If the ``||Variables:playing||`` variable is ``||Logic:false||``, then we select a new random target pixel (i.e., random values for ``||Variables:targetX||`` and ``||Variables:targetY||``). You can find the random number generator in the ``||Math:Math||`` tray. Once we've selected these targets, we can set ``||Variables:playing||`` true ``||Logic:true||``.
+All that's left now is to handle the individual rounds. To do this, we'll use a second ``||Basic:forever||`` block. If the ``||Variables:playing||`` variable is ``||Logic:false||`` and the ``||Variables:counter||`` is less than 7, then we select a new random target pixel (i.e., random values for ``||Variables:targetX||`` and ``||Variables:targetY||``). You can find the random number generator in the ``||Math:Math||`` tray. Once we've selected these targets, we can set ``||Variables:playing||`` true ``||Logic:true||``.
 
 ```blocks
 basic.forever(function () {
@@ -114,7 +110,7 @@ basic.forever(function () {
 
 ## Step 6 
 
-Finally, we need to check to see if the ball has hit the target. If ``||Variables:x||`` is equal to ``||Variables:targetX||`` and ``||Variables:y||`` is equal to ``||Variables:targetY||``, then we'll pause the game (by setting ``||Variables:playing||`` to ``||Logic:false||``), increment the ``||Variables:counter||`` variable, show a checkmark (but we'll want to show it upside down), set the targets to -1, wait for a couple of seconds, then clear the screen. Because ``||Variables:playing||`` will be ``||Logic:false||``, the next iteration will reset the targets and start the next round.
+Finally, we need to check to see if the ball has hit the target. Add an else block that is an alternative to the ``||Logic:if||`` in your new ``||Basic:forever||`` block. Within this, if ``||Variables:x||`` is equal to ``||Variables:targetX||`` and ``||Variables:y||`` is equal to ``||Variables:targetY||``, then we'll pause the game (by setting ``||Variables:playing||`` to ``||Logic:false||``), increment the ``||Variables:counter||`` variable, show a checkmark (but we'll want to show it upside down), set the targets to -1, wait for a couple of seconds, then clear the screen. Because ``||Variables:playing||`` will be ``||Logic:false||``, the next iteration will reset the targets and start the next round.
 
 ```blocks
 basic.forever(function () {
