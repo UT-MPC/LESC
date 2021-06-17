@@ -63,7 +63,7 @@ Now the program will enter the if part of the condition block if the light level
 
 ## Step 10
 
-If the light is off (i.e., within the if part of the conditional), if we're currently timing, we need to stop timing, and add the elapsed time to the total time. To do this, we use another ``||Logic:if||`` block, but this time we check the value of the ``||Variables:timing||`` variable to see if it is ``||Logic:true||``. If so, we set it to ``||Logic:false||``, and add the elapsed time (i.e., ``||Input:running time||`` - ``||Variables:startTime||`` divided by 1000) to the ``||Variables:totalTime||``. 
+If the light is off (i.e., within the if part of the conditional), if we're currently timing, we need to stop timing, and add the elapsed time to the total time. To do this, we use another ``||Logic:if||`` block, but this time we check the value of the ``||Variables:timing||`` variable to see if it is ``||Logic:true||``. If so, we set it to ``||Logic:false||``, and add the elapsed time (i.e., ``||Input:running time||`` - ``||Variables:startTime||`` divided by 1000) to the ``||Variables:totalTime||``. (You'll find ``||Input:running time||`` under "more" inside the ``||Input:Input||`` tray.
 
 ```blocks
 basic.forever(function () {
@@ -110,7 +110,7 @@ input.onButtonPressed(Button.A, function () {
 
 ## Step 13
 
-The other display function just helps us tell that our program is working correctly. When the value of ``||Variables:timing||`` is ``||Logic:true||`` (i.e., the light is on), let's light up all 25 LEDs. When the value of ``||Variables:timing||`` is ``||Logic:false||`` (i.e., the light is on), let's light up just the center LED. To do this, we can actually create *another* ``||Basic:forever||`` block with an ``||Logic:if else||`` condition within it.
+The other display function just helps us tell that our program is working correctly. When the value of ``||Variables:timing||`` is ``||Logic:true||`` (i.e., the light is on), let's light up all 25 LEDs. When the value of ``||Variables:timing||`` is ``||Logic:false||`` (i.e., the light is off), let's light up just the center LED. To do this, we can actually create *another* ``||Basic:forever||`` block with an ``||Logic:if else||`` condition within it.
 
 ```blocks
 basic.forever(function () {
