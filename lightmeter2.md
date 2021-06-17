@@ -110,6 +110,33 @@ input.onButtonPressed(Button.A, function () {
 
 ## Step 13
 
+At this point, the value of the totalTime variable is only updated when the light level goes from on to off (within the ``||Basic:forever||`` block). To display the time accurately when the user presses the button, we need to first update the time (if the light is on) and then reset the ``||Variables:startTime||`` variable. To do this, add an ``||Logic:if||`` block before the ``||Basic:show number||`` block.
+
+```blocks
+input.onButtonPressed(Button.A, function () {
+    if (true) {
+    	
+    }
+    basic.showNumber(totalTime)
+})
+```
+
+## Step 14
+
+Next, *if* we are currently timing (i.e., the ``||Variables:timing||`` variable is ``||Logic:true||``, *then* we want to add the elapsed time to the ``||Variables:totalTime||`` variable and reset the ``||Variables:startTime||`` variable.
+
+```blocks
+input.onButtonPressed(Button.A, function () {
+    if (timing == true) {
+        totalTime = totalTime + (input.runningTime() - startTime) / 1000
+        startTime = input.runningTime()
+    }
+    basic.showNumber(totalTime)
+})
+```
+
+## Step 15
+
 The other display function just helps us tell that our program is working correctly. When the value of ``||Variables:timing||`` is ``||Logic:true||`` (i.e., the light is on), let's light up all 25 LEDs. When the value of ``||Variables:timing||`` is ``||Logic:false||`` (i.e., the light is off), let's light up just the center LED. To do this, we can actually create *another* ``||Basic:forever||`` block with an ``||Logic:if else||`` condition within it.
 
 ```blocks
@@ -134,6 +161,6 @@ basic.forever(function () {
 })
 ```
 
-## Step 14
+## Step 16
 
 That's all folks! You can Dowload this code to your @boardname@ and see it in action. You can also click Finish to the right, and the browser will take you to the MakeCode programming environment if you want to play with your code some more. You can also use the JavaScript switch to see what the same code looks like in a different language.
