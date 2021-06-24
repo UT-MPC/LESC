@@ -117,7 +117,7 @@ basic.forever(function () {
 
 ## Step 4
 
-The last step is to light up the neopixel, one LED at a time. Since there are seven LEDs on the neopixel, we can use the ``||Variables:counter||`` variable as the index of the LED we should light up. Add this into the same ``||Basic:forever||`` block, just after you display the check for finding the target.
+The next step is to light up the neopixel, one LED at a time. Since there are seven LEDs on the neopixel, we can use the ``||Variables:counter||`` variable as the index of the LED we should light up. Add this into the same ``||Basic:forever||`` block, just after you display the check for finding the target.
 
 ```blocks
 basic.forever(function () {
@@ -149,3 +149,21 @@ basic.forever(function () {
     }
 })
 ```
+
+## Step 5
+
+Finally, we want to reset the entire game whenever the user presses button A. We'll need to go through each of the neopixel LEDs, by index, and reset their color, and we also need to reset the ``||Variables:counter||`` variable to 0.
+
+```blocks
+input.onButtonPressed(Button.A, function () {
+    counter = 0
+    for (let index = 0; index <= 6; index++) {
+        ring.setPixelColor(index, neopixel.rgb(16, 16, 16))
+        ring.show()
+    }
+})
+```
+
+## Step 6
+
+Try this out on your glove! Then make your light show for when the user gets through 7 rounds in a row.
